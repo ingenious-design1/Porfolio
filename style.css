@@ -1,88 +1,120 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Base style */
 body {
   font-family: "Helvetica Neue", Arial, sans-serif;
-  background: #ffffff;
+  background: #fff;
   color: #111;
-  line-height: 1.6;
 }
 
-/* Section spacing like portfolio pages */
-section {
+/* Each section acts like a PDF page */
+.page {
+  min-height: 100vh;
   padding: 100px 12%;
-  border-bottom: 1px solid #eee;
-}
-
-/* Header / Name page */
-header {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  letter-spacing: 4px;
+  border-bottom: 1px solid #eee;
 }
 
-header h1 {
+/* Cover page */
+.cover {
+  text-align: left;
+}
+
+.cover h1 {
   font-size: 4rem;
-  font-weight: 700;
+  letter-spacing: 6px;
 }
 
-header p {
+.cover p {
   margin-top: 20px;
-  font-size: 1.2rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+  letter-spacing: 4px;
   color: #555;
 }
 
-/* Section titles */
+.cover h3 {
+  margin-top: 40px;
+  font-weight: normal;
+  letter-spacing: 5px;
+}
+
+/* Titles */
 h2 {
   font-size: 2rem;
+  letter-spacing: 4px;
+  margin-bottom: 20px;
+}
+
+/* Page number style */
+.page-number {
+  font-size: 0.9rem;
+  color: #777;
   margin-bottom: 40px;
   letter-spacing: 3px;
-  text-transform: uppercase;
 }
 
-/* Paragraph text */
-p {
-  max-width: 700px;
+/* Text content */
+.content {
+  max-width: 600px;
   font-size: 1.1rem;
-  color: #333;
+  line-height: 1.8;
 }
 
-/* Video frame */
+/* Quote page */
+.quote {
+  font-size: 2.5rem;
+  line-height: 1.5;
+  text-align: left;
+}
+
+/* Video */
 iframe {
   width: 100%;
   max-width: 900px;
   height: 500px;
-  margin-top: 20px;
   border: none;
 }
 
-/* Contact layout */
-.contact p {
-  margin-bottom: 10px;
-  font-size: 1rem;
+/* Contact grid */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  max-width: 600px;
 }
 
-/* Mobile responsive */
+.contact-grid strong {
+  letter-spacing: 2px;
+}
+
+.contact-grid p {
+  margin-top: 5px;
+  color: #444;
+}
+
+/* Mobile */
 @media (max-width: 768px) {
-  section {
+  .page {
     padding: 60px 8%;
   }
 
-  header h1 {
+  .cover h1 {
     font-size: 2.5rem;
   }
 
   iframe {
     height: 250px;
   }
-}
 
+  .quote {
+    font-size: 1.6rem;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
